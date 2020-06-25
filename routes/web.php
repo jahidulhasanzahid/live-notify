@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('nofity', function () {
+    event(new App\Events\MyEvent('Simple Live Notification Alert by Laravel and Pusher'));
+    return "Event has been sent!";
+});
